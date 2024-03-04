@@ -11,16 +11,16 @@ def generate_short_url(url):
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    short_url = None  
     if request.method == 'POST':
-        long_url = request.form.get('url')
+        long_url = request.form.get('long_url')  
         short_code = generate_short_url(long_url)
         url_mapping[short_code] = long_url
-        short_url = request.host_url + short_code
-        return render_template('index.html', short_url=short_url)
+        short_url = request.host_url + 'shorten/' + short_code  
 
-    return render_template('index.html')
+    return render_template('index.html', short_url=short_url)
 
-@app.route('/<short_code>')
+@app.route('/shorten/<short_code>')  
 def redirect_to_original(short_code):
     long_url = url_mapping.get(short_code)
     if long_url:
