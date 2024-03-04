@@ -41,7 +41,7 @@
             color: green;
         }
 
-        h7 {
+        h7, label {
             line-height: 1.6;
             color: red;
         }
@@ -87,31 +87,32 @@
 
         <h1 align="center"> URL Shortner </h1>
         <section>
-            <form id="shorten-form" action="/shorten" method="POST">
+            <form action="/" method="POST">
                 <div class="form-group">
-                    <label for="url">Enter URL to shorten:</label>
+                    <label for="long_url">Enter URL to shorten:</label>
                     <input 
                         type="url" 
-                        id="url" 
+                        id="long_url" 
+                        name="long_url" 
                         class="form-control"
-                        name="url" 
                         placeholder="https://example.com" required>
                     </input>
                     <br>
 
+                    <button class="btn btn-primary" type="submit"> shorten </button>
                 </div>
             </form>
         
         </section>
 
         <section>
-            <h1>Your shortened URL is: {{ short_url }} </h1>
+            {% if short_url %}
+                <h5 align="center">Your shortened URL is: <a href="{{ short_url }}"> {{ short_url }} </a></h5>
+            {% endif %}
         </section>
-
-        <button class="btn btn-primary" type="submit"> shorten </button>
         
         <footer>
-            <p>&copy; 2024 URL Shortner</p>
+            <p>&copy; 2024 DNI URL Shortner</p>
         </footer>
 
     </section>
