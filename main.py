@@ -28,5 +28,9 @@ def redirect_to_original(short_code):
     else:
         return 'URL not found'
 
+@app.route('/history', methods=["GET", "POST"])
+def history():
+    return render_template("history.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
