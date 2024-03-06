@@ -24,7 +24,7 @@
         header {
             background-color: #1e2229;
             text-align: center;
-            padding: 1em;
+            padding: 2em;
         }
 
         h1, h2 {
@@ -82,14 +82,14 @@
 </head>
 
 <body>
-    <header> Welcome To The URL Shortner App </header>
+    <header> **Welcome To The URL Shortner App** </header>
     <section>
 
         <h1 align="center"> URL Shortner </h1>
         <section>
             <form action="/" method="POST">
                 <div class="form-group">
-                    <label for="long_url">Enter URL to shorten:</label>
+                    <label for="long_url"> Enter the URL to shorten: </label>
                     <input 
                         type="url" 
                         id="long_url" 
@@ -114,7 +114,7 @@
             {% endif %}
         </section>
 
-        <button class="btn btn-primary"></button><a href="{{ url_for('history') }}">Go To Index Page</a></button>
+        <button class="btn btn-primary"><a href="{{ url_for('history') }}">Go To Index Page</a></button>
         
         <footer>
             <p>&copy; 2024 DNI URL Shortner</p>
@@ -123,5 +123,4 @@
     </section>
 </body>
 </html>
-
 {% endblock %}
