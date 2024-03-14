@@ -31,7 +31,7 @@ def redirect_to_original(short_code):
 
 @app.route('/history')
 def history():
-    error = request.get.args("message_error")
+    error = request.args.get("message_error")
     return render_template("history.html", message_error=message_error)
 
 if __name__ == '__main__':
