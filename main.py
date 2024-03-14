@@ -12,13 +12,14 @@ def generate_short_url(url):
 @app.route('/', methods=['GET', 'POST'])
 def home():
     short_url = None  
+    message_error = "OOPS!!, The URL is not found."
     if request.method == 'POST':
         long_url = request.form.get('long_url')  
         short_code = generate_short_url(long_url)
         url_mapping[short_code] = long_url
         short_url = request.host_url + 'shorten/' + short_code  
 
-    return render_template('index.html', short_url=short_url)
+    return render_template('index.html', short_url=short_url, message_error=message_error)
 
 @app.route('/shorten/<short_code>')  
 def redirect_to_original(short_code):
@@ -28,9 +29,10 @@ def redirect_to_original(short_code):
     else:
         return 'URL not found'
 
-@app.route('/history', methods=["GET", "POST"])
+@app.route('/history')
 def history():
-    return render_template("history.html")
+    error = request.get.args("message_error")
+    return render_template("history.html", message_error=message_error)
 
 if __name__ == '__main__':
     app.run(debug=True)
