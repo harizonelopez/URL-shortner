@@ -24,7 +24,7 @@
         header {
             background-color: #1e2229;
             text-align: center;
-            padding: 2em;
+            padding: 1em;
         }
 
         h1, h2 {
@@ -82,14 +82,14 @@
 </head>
 
 <body>
-    <header> **Welcome To The URL Shortner App** </header>
+    <header>**Welcome to the URL Shortner App**</header>
     <section>
 
-        <h1 align="center"> URL Shortner </h1>
+        <h1 align="center">URL Shortner App</h1>
         <section>
             <form action="/" method="POST">
                 <div class="form-group">
-                    <label for="long_url"> Enter the URL to shorten: </label>
+                    <label for="long_url">Enter the URL to shorten:</label>
                     <input 
                         type="url" 
                         id="long_url" 
@@ -102,25 +102,25 @@
                     <button class="btn btn-primary" type="submit"> shorten       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
                       <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
                       <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>
-                        </svg></button>
+                      </svg></button>
                 </div>
             </form>
-        
         </section>
 
         <section>
             {% if short_url %}
-                <h5 align="center">Your shortened URL is: <a href="{{ short_url }}"> {{ short_url }} </a></h5>
+                <h5 align="center">Your shortened URL is:<a href="{{ short_url }}"> {{ short_url }} </a></h5>
             {% endif %}
         </section>
 
-        <button class="btn btn-primary"><a href="{{ url_for('history') }}">Go To Index Page</a></button>
+        <button class="btn btn-primary"><a href="{{ url_for('history') }}">Go To History Page</a></button>
         
         <footer>
-            <p>&copy; 2024 DNI URL Shortner</p>
+            <p>&copy;2024 URL Shortner App</p>
         </footer>
 
     </section>
 </body>
 </html>
+
 {% endblock %}
