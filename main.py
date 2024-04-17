@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 import hashlib
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "aladinh00-01montext"
 url_mapping = {}
 
 def generate_short_url(url):
@@ -27,12 +28,12 @@ def redirect_to_original(short_code):
     if long_url:
         return redirect(long_url)
     else:
-        return 'URL not found'
+        return '404 ERROR!! URL not found'
 
 @app.route('/history')
 def history():
     error = request.args.get("message_error")
     return render_template("history.html", message_error=message_error)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
