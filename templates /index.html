@@ -26,7 +26,7 @@
             padding: 1em;
         }
 
-        h1, h2 {
+        h1 {
             color: #61dafb;
         }
 
@@ -35,19 +35,9 @@
             color: #FF1493;
         }
 
-        h6 {
-            line-height: 1.6;
-            color: green;
-        }
-
-        h7, label {
+        label {
             line-height: 1.6;
             color: red;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #a4acc4;
         }
 
         section {
@@ -95,10 +85,10 @@
                         name="long_url" 
                         class="form-control"
                         placeholder="https://example.com" required>
-                    </input>
                     <br>
 
-                    <button class="btn btn-primary" type="submit"> shorten       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
+                    <button class="btn btn-primary" type="submit">Shorten       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                                                     class="bi bi-link" viewBox="0 0 16 16">
                       <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
                       <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>
                       </svg></button>
@@ -108,11 +98,11 @@
 
         <section>
             {% if short_url %}
-                <h5 align="center">Your shortened URL is:<a href="{{ short_url }}"> {{ short_url }} </a></h5>
+                <h5 align="center">Your shortened URL is: <a href="{{ short_url }}"> {{ short_url }} </a></h5>
             {% endif %}
         </section>
 
-        <button class="btn btn-primary"><a href="{{ url_for('history') }}">Go To History Page</a></button>
+        <button class="btn btn-primary"><a href="{{ url_for('history') }}">Go to Contacts page</a></button>
         
         <footer>
             <p>&copy;2024 URL Shortner App</p>
