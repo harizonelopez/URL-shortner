@@ -2,11 +2,7 @@
 {% block title %} Contacts page {% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             display: flex;
@@ -62,14 +58,11 @@
         a:hover {
             border-bottom: 2px solid #FF6347;
         }
-
     </style>
 </head>
-
 <body>
     <section>
         <header>Welcome To The Contacts & Links Page</header>
-
         <section align="center">
             <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-quote-fill" viewBox="0 0 16 16">
                 <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353zM7.194 4.766q.13.188.
@@ -86,7 +79,6 @@
                     1.7 0 0 0-.227-.273 1.5 1.5 0 0 0-.469-.324l-.008-.004A1.8 1.8 0 0 0 10.07 4c-.957 0-1.734.746-1.734 1.667 0 .92.777 1.666 1.734 1.666.343 
                     0 .662-.095.931-.26z"/></svg></h5>
         </section>
-
         <section>
             <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 
@@ -149,7 +141,6 @@
                     82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.
                     38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg></a></p>
         </section>
-
         <button class="btn btn-primary"><a href="{{ url_for('home') }}">Back to homepage</a></button>
 
         <footer>
@@ -158,6 +149,4 @@
 
     </section>
 </body>
-</html>
-
 {% endblock %}
