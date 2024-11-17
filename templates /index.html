@@ -2,11 +2,7 @@
 {% block title %} Home page {% endblock %}
 
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             display: flex;
@@ -66,14 +62,11 @@
         a:hover {
             border-bottom: 2px solid #FF6347;
         }
-
     </style>
 </head>
-
 <body>
     <header>**Welcome to the URL Shortner App**</header>
     <section>
-
         <h1 align="center">URL Shortner App</h1>
         <section>
             <form action="/" method="POST">
@@ -95,13 +88,11 @@
                 </div>
             </form>
         </section>
-
         <section>
             {% if short_url %}
                 <h5 align="center">Your shortened URL is: <a href="{{ short_url }}"> {{ short_url }} </a></h5>
             {% endif %}
         </section>
-
         <button class="btn btn-primary"><a href="{{ url_for('history') }}">Go to Contacts page</a></button>
         
         <footer>
@@ -110,6 +101,4 @@
 
     </section>
 </body>
-</html>
-
 {% endblock %}
